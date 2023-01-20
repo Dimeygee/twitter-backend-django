@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'djoser',
     'rest_framework',
-    'rest_auth',
+    'rest_auth'
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
