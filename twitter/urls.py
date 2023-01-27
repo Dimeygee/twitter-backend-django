@@ -30,8 +30,9 @@ urlpatterns = [
     path('auth/',include('djoser.urls')),
     path('auth/',include('djoser.urls.jwt')),
     path('accounts/',include('allauth.urls')),
+   ##  path('auth/', include('djoser.social.urls')),#Needed for social authentication
     path('rest-auth/google/', GoogleLogin.as_view(), name='google_login')
 ]
 
-if settings.DEBUG: 
+if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

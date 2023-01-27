@@ -45,12 +45,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users.apps.UsersConfig',
-    'userprofile.apps.UserprofileConfig',
-    'notifications.apps.NotificationsConfig',
-    'tweets.apps.TweetsConfig',
-    'hastags.apps.HastagsConfig',
-    'chat.apps.ChatConfig',
+    'users',
+    'userprofile',
+    'notifications',
+    'tweets',
+    'hastags',
+    'chat',
     'corsheaders',
     'djoser',
     'rest_framework',
@@ -105,7 +105,7 @@ ROOT_URLCONF = 'twitter.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+         'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,6 +121,7 @@ TEMPLATES = [
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
+     'social_core.backends.google.GoogleOAuth2',
 ]
 
 
@@ -201,3 +202,21 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+##to add
+
+
+##SOCIAL_AUTH_GOOGLE_OAUTH_KEY
+##SOCIAL_AUTH_GOOGLE_OAUTH_SECRET
+##SOCIAL_AUTH_GOOGLE_OAUTH_SCOPE
+##SOCIAL_AUTH_RAISE_EXCEPTIONS = False
+
+##SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'your_client_id_key'
+##SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'your_secret_key'
+##SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = [
+##    'https://www.googleapis.com/auth/userinfo.email',
+ ##   'https://www.googleapis.com/auth/userinfo.profile',
+  ##  'openid'
+##]
+##SOCIAL_AUTH_GOOGLE_OAUTH2_EXTRA_DATA = ['first_name', 'last_name']
